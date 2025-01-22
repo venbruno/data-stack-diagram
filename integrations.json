@@ -1,7 +1,6 @@
-[
-  {
-    "id": "snowflake",
+{
+  "snowflake": {
     "name": "Snowflake",
     "category": "Database"
   }
-]
+}
