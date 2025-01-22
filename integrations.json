@@ -1,4 +1,8 @@
 {
+  "bigquery": {
+    "name": "BigQuery",
+    "category": "Database"
+  },
   "snowflake": {
     "name": "Snowflake",
     "category": "Database"
