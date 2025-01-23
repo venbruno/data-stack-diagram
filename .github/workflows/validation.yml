@@ -1,4 +1,4 @@
-name: Validation
+name: validate
 
 on:
   pull_request:
@@ -6,20 +6,52 @@ on:
       - main
 
 jobs:
-  run-script:
-    runs-on: ubuntu-latest
-
+  integrations:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [18]
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 8
 
-      - name: Install deps
-        run: pnpm install
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
 
-      - name: Run validation script
-        run: node validation.js
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Run validation script
+      run: node validate/integrations.js
+
+  logos:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [18]
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 8
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Run validation script
+      run: node validate/logos.js
