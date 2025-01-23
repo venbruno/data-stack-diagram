@@ -1,10 +1,130 @@
 {
+  "airbyte": {
+    "name": "Airbyte",
+    "category": "ETL"
+  },
+  "airflow": {
+    "name": "Airflow",
+    "category": "ETL"
+  },
   "bigquery": {
     "name": "BigQuery",
     "category": "Database"
   },
+  "census": {
+    "name": "Census",
+    "category": "Reverse ETL"
+  },
+  "clickhouse": {
+    "name": "ClickHouse",
+    "category": "Database"
+  },
+  "coalesce": {
+    "name": "Coalesce",
+    "category": "Transform"
+  },
+  "databricks": {
+    "name": "Databricks",
+    "category": "Database"
+  },
+  "dbt": {
+    "name": "dbt",
+    "category": "Transform"
+  },
+  "fivetran": {
+    "name": "Fivetran",
+    "category": "ETL"
+  },
+  "flink": {
+    "name": "Flink",
+    "category": "ETL"
+  },
+  "git": {
+    "name": "Git",
+    "category": "Version Control"
+  },
+  "github": {
+    "name": "GitHub",
+    "category": "Version Control"
+  },
+  "gitlab": {
+    "name": "GitLab",
+    "category": "Version Control"
+  },
+  "googlesheets": {
+    "name": "Google Sheets",
+    "category": "Source System"
+  },
+  "hex": {
+    "name": "Hex",
+    "category": "Business Intelligence"
+  },
+  "hightouch": {
+    "name": "Hightouch",
+    "category": "Reverse ETL"
+  },
+  "kafka": {
+    "name": "Kafka",
+    "category": "ETL"
+  },
+  "looker": {
+    "name": "Looker",
+    "category": "Business Intelligence"
+  },
+  "metabase": {
+    "name": "Metabase",
+    "category": "Business Intelligence"
+  },
+  "mode": {
+    "name": "Mode",
+    "category": "Business Intelligence"
+  },
+  "msexcel": {
+    "name": "Excel",
+    "category": "Source System"
+  },
+  "msteams": {
+    "name": "Teams",
+    "category": "Communication"
+  },
+  "mysql": {
+    "name": "MySQL",
+    "category": "Database"
+  },
+  "pagerduty": {
+    "name": "PagerDuty",
+    "category": "Communication"
+  },
+  "postgres": {
+    "name": "PostgresSQL",
+    "category": "Database"
+  },
+  "redshift": {
+    "name": "Redshift",
+    "category": "Database"
+  },
+  "segment": {
+    "name": "Segment",
+    "category": "ETL"
+  },
+  "sigma": {
+    "name": "Sigma",
+    "category": "Business Intelligence"
+  },
+  "slack": {
+    "name": "Slack",
+    "category": "Communication"
+  },
   "snowflake": {
     "name": "Snowflake",
     "category": "Database"
+  },
+  "sqlserver": {
+    "name": "SQL Server",
+    "category": "Database"
+  },
+  "tableau": {
+    "name": "Tableau",
+    "category": "Business Intelligence"
   }
 }
