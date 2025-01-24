@@ -1,32 +1,49 @@
-const fs = require('fs');
-const path = require('path');
+const jsonDiff = require('json-diff');
 const logos = require('../logos.json');
-const { keys, difference } = require('ramda');
+const { keys, sort } = require('ramda');
+const { z } = require('zod');
+
+let hasError = false
 
 console.log("");
 console.log("Validate Logos");
 console.log("==============");
 console.log("");
 
-const svgsPath = path.resolve(__dirname, '..', 'svgs');
+const LogoSchema = z.object({
+  name: z.string().nonempty(),
+  category: z.string().nonempty(),
+})
+
+const result = z.record(z.string().nonempty(), LogoSchema).safeParse(logos);
+
+if (result.success) {
+  console.log(`✅ logos.json is valid`);
+} else {
+  hasError = true;
+  console.log(`❌ logos.json is invalid`);
+  console.log("");
+  console.error(result.error);
+}
+console.log("");
 
 try {
-  const svgFiles = fs.readdirSync(svgsPath);
-  const svgNames = svgFiles.map(fileName => fileName.replace(/\.svg$/, ''));
   const logoNames = keys(logos);
-  const missingLogos = difference(svgNames, logoNames);
-  if (missingLogos.length > 0) {
-    console.log(`❌ ${missingLogos.length} logos${missingLogos.length === 1 ? '' : 's'} missing in logos.json`);
+  const sortDiff = jsonDiff.diffString(
+    logoNames,
+    sort((a, b) => a.localeCompare(b), logoNames)
+  );
+  if (sortDiff.trim()) {
+    hasError = true;
+    console.log(`❌ logos.json is not in alphabetical order`);
     console.log("");
-    for (const logo of missingLogos) {
-      console.log(`    - ${logo}`);
-    }
+    console.log(sortDiff);
   } else {
-    console.log(`✅ All logos defined in logos.json`);
+    console.log(`✅ logos.json is in alphabetical order`);
   }
   console.log("");
 
-  if (missingLogos.length > 0) {
+  if (hasError) {
     process.exit(1);
   } else {
     process.exit(0);
