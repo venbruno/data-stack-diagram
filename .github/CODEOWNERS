@@ -1,0 +1,6 @@
+# mp frontend owns everything...
+* @colbyr @gusvargas @spiicy-sauce @benbriggs
+
+# ... except these
+/logos.json
+/svgs
