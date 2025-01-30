@@ -55,6 +55,10 @@
     "name": "DuckDB",
     "category": "Database"
   },
+  "erathos": {
+    "name": "Erathos",
+    "category": "ETL"
+  },
   "fivetran": {
     "name": "Fivetran",
     "category": "ETL"
