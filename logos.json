@@ -115,6 +115,10 @@
     "name": "MySQL",
     "category": "Database"
   },
+  "omni": {
+    "name": "Omni",
+    "category": "Business Intelligence"
+  },
   "pagerduty": {
     "name": "PagerDuty",
     "category": "Communication"
