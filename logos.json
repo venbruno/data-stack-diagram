@@ -127,6 +127,10 @@
     "name": "Omni",
     "category": "Business Intelligence"
   },
+  "openmetadata": {
+    "name": "OpenMetadata",
+    "category": "Data Catalog"
+  },
   "oracle": {
     "name": "Oracle",
     "category": "Database"
