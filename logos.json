@@ -47,6 +47,10 @@
     "name": "dbt",
     "category": "Transform"
   },
+  "duckdb": {
+    "name": "DuckDB",
+    "category": "Database"
+  },
   "fivetran": {
     "name": "Fivetran",
     "category": "ETL"
