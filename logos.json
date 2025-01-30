@@ -170,5 +170,9 @@
   "tableau": {
     "name": "Tableau",
     "category": "Business Intelligence"
+  },
+  "timeplus": {
+    "name": "Timeplus",
+    "category": "Database"
   }
 }
